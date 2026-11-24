@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-const inp = "w-full rounded-lg border border-line bg-bg p-2 text-sm";
+const inp = "w-full rounded-lg border border-line bg-bg p-2 text-base sm:text-sm";
 
 async function uploadImage(f: File): Promise<string> {
   const r = await fetch("/api/music/upload-url", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind: "artwork", contentType: f.type, size: f.size }) });

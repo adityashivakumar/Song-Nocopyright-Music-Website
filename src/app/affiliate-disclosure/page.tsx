@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/lib/site";
 import LegalPage from "@/components/layout/LegalPage";
 export const metadata = { title: "Affiliate Disclosure" };
 export default function Page() {
@@ -17,7 +18,7 @@ export default function Page() {
         <li>Prices and availability can change, so check the shop for the current details.</li>
         <li>We count clicks on our links to see which products are useful. A click does not mean a purchase.</li>
       </ul>
-      <p>Our recommendations are not official endorsements by the brands. Questions: <a href="mailto:your-email@example.com">adityasd2006@gmail.com</a>.</p>
+      <p>Our recommendations are not official endorsements by the brands. Questions: <a href={`mailto:${CONTACT_EMAIL}`}>adityasd2006@gmail.com</a>.</p>
     </LegalPage>
   );
 }

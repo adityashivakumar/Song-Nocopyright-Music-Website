@@ -21,7 +21,7 @@ export default async function Shell({ children }: { children: React.ReactNode })
 
   return (
     <>
-      <header className="sticky top-0 z-40 flex h-14 items-center gap-4 bg-bg/95 px-4 backdrop-blur">
+      <header className="sticky top-0 z-40 flex h-14 items-center gap-2 bg-bg/95 px-3 sm:gap-4 sm:px-4 backdrop-blur">
         <Link href="/" aria-label="No Copyright Music Studio – Home" className="flex shrink-0 items-center">
   <img src="/logo.png" alt="No Copyright Music Studio" className="h-11 w-11 rounded-lg object-cover" />
 </Link>
@@ -30,7 +30,7 @@ export default async function Shell({ children }: { children: React.ReactNode })
           <button aria-label="Search" className="rounded-r-full border border-l-0 border-line bg-chip px-4"><Search size={18} /></button>
         </form>
         {sub && (
-          <a href={sub} target="_blank" rel="noopener noreferrer" className="rounded-full bg-yt px-4 py-1.5 text-sm font-medium">
+          <a href={sub} target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full bg-yt px-3 py-1.5 text-xs font-medium sm:px-4 sm:text-sm">
             Subscribe
           </a>
         )}
@@ -51,9 +51,9 @@ export default async function Shell({ children }: { children: React.ReactNode })
         </main>
       </div>
 
-      <nav className="fixed inset-x-0 bottom-0 z-40 flex h-14 items-center justify-around bg-bg md:hidden">
-        {nav.slice(0, 4).map(([h, l, I]) => (
-          <Link key={h} href={h} className="flex flex-col items-center text-[10px]">
+      <nav className="fixed inset-x-0 bottom-0 z-40 flex h-14 items-center gap-1 overflow-x-auto border-t border-line bg-bg px-2 md:hidden">
+        {nav.map(([h, l, I]) => (
+          <Link key={h} href={h} className="flex min-w-[64px] flex-1 flex-col items-center text-[10px]">
             <I size={20} />
             {l}
           </Link>

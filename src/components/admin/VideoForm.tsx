@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-const inp = "w-full rounded-lg border border-line bg-bg p-2 text-sm";
+const inp = "w-full rounded-lg border border-line bg-bg p-2 text-base sm:text-sm";
 export default function VideoForm({ songs }: { songs: { id: string; title: string }[] }) {
   const [msg, setMsg] = useState(""); const [busy, setBusy] = useState(false);
   async function submit(e: React.FormEvent<HTMLFormElement>) {

@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/lib/site";
 import LegalPage from "@/components/layout/LegalPage";
 export const metadata = { title: "Contact" };
 export default function Page() {

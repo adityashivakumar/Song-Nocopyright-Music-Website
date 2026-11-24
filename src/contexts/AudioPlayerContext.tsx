@@ -10,7 +10,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [queue, setQueue] = useState<Track[]>([]); const [track, setTrack] = useState<Track | null>(null);
   const [playing, setPlaying] = useState(false); const [time, setTime] = useState(0); const [duration, setDuration] = useState(0);
   const [volume, setVol] = useState(1); const [repeat, setRepeat] = useState(false); const [shuffle, setShuffle] = useState(false); const [error, setError] = useState<string | null>(null);
-  const load = useCallback((t: Track) => { const a = ref.current!; setTrack(t); setError(null); a.src = t.src; a.play().catch(() => setError("Playback failed")); }, []);
+  const load = useCallback((t: Track) => { const a = ref.current!; setTrack(t); setError(null); fetch("/api/music/track-play", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: t.id }), keepalive: true }).catch(() => {}); a.src = t.src; a.play().catch(() => setError("Playback failed")); }, []);
   const toggle = () => { const a = ref.current!; if (a.paused) a.play(); else a.pause(); };
   const play = (t: Track, q?: Track[]) => { if (q) setQueue(q); if (track?.id === t.id) return toggle(); load(t); };
   const step = (d: number) => { if (!queue.length || !track) return; const i = queue.findIndex((x) => x.id === track.id); const n = shuffle ? Math.floor(Math.random() * queue.length) : (i + d + queue.length) % queue.length; load(queue[n]); };

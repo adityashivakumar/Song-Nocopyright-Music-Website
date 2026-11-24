@@ -3,7 +3,7 @@ import { z } from "zod";
 import { randomUUID } from "crypto";
 import { requireAdmin } from "@/lib/auth/requireAdmin";
 import { presignUpload } from "@/lib/cloudflare/r2";
-const schema = z.object({ kind: z.enum(["audio", "artwork"]), contentType: z.string(), size: z.number().max(50 * 1024 * 1024) });
+const schema = z.object({ kind: z.enum(["audio", "artwork"]), contentType: z.string(), size: z.number().max(100 * 1024 * 1024) });
 export async function POST(req: Request) {
   if (!(await requireAdmin())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const p = schema.safeParse(await req.json().catch(() => null));

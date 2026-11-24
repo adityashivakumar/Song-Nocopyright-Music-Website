@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/lib/site";
 import LegalPage from "@/components/layout/LegalPage";
 export const metadata = { title: "Terms and Conditions" };
 export default function Page() {
@@ -17,7 +18,7 @@ export default function Page() {
       <h2>No warranty</h2>
       <p>The website and music are provided “as is”, without warranties of any kind. We are not liable for any loss arising from their use, to the extent allowed by law.</p>
       <h2>Contact</h2>
-      <p>Questions about these terms: <a href="mailto:your-email@example.com">adityasd2006@gmail.com</a>.</p>
+      <p>Questions about these terms: <a href={`mailto:${CONTACT_EMAIL}`}>adityasd2006@gmail.com</a>.</p>
     </LegalPage>
   );
 }

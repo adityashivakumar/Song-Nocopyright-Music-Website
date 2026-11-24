@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/lib/site";
 import LegalPage from "@/components/layout/LegalPage";
 export const metadata = { title: "Privacy Policy" };
 export default function Page() {
@@ -15,7 +16,7 @@ export default function Page() {
       <p>Embedded YouTube videos load from youtube-nocookie.com, and YouTube/Google may set cookies when you play a video. See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> and the <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a>.</p>
       <p>When you click an affiliate link, the shop (for example Amazon or Meesho) may set its own cookies to track the referral. We do not control these.</p>
       <h2>Your choices</h2>
-      <p>You can block cookies in your browser settings. To ask about your data, email <a href="mailto:your-email@example.com">adityasd2006@gmail.com</a>.</p>
+      <p>You can block cookies in your browser settings. To ask about your data, email <a href={`mailto:${CONTACT_EMAIL}`}>adityasd2006@gmail.com</a>.</p>
       <h2>Changes</h2>
       <p>We may update this policy and will change the date above when we do.</p>
     </LegalPage>
